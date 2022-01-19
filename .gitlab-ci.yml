@@ -1,15 +1,44 @@
 stages:
+  - clean
   - build
+  - static-code-analysis
   - unit-test
+  - coverage-test
+  - build-image
+  - publish-image
+  - deploy
+
+clean:
+  stage: clean
+  script:
+    - echo "Cleaning leftovers from previous builds"
+    # - sh "./gradlew clean"
 
 build:
   stage: build
   script:
-    - echo "Compiling the code..."
-    - npm install
-
+    - echo "Building the code..."
 
 unit-test:
   stage: unit-test
   script:
-    - echo "Running unit tests... This will take about 60 seconds."
+    - echo "Running unit tests..."
+
+coverage-test:
+  stage: coverage-test
+  script:
+    - echo "Running coverage tests..."
+
+build-image:
+  stage: build-image
+  script:
+    - echo "Building Docker Image..."
+
+publish-image:
+  stage: publish-image
+  script:
+    - echo "Publishing Docker Image..."
+
+deploy:
+  stage: deploy
+  trigger: qryptic/qryptic-iac
