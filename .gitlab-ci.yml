@@ -1,3 +1,11 @@
+image: docker:latest
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay
+  SPRING_PROFILES_ACTIVE: dev
+
 stages:
   - clean
   - build
