@@ -1,0 +1,13 @@
+stages:
+  - build
+  - unit-test
+
+build:
+  stage: build
+  script:
+    - echo "Compiling the code..."
+
+unit-test:
+  stage: unit-test
+  script:
+    - echo "Running unit tests... This will take about 60 seconds."
