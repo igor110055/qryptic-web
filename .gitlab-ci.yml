@@ -6,6 +6,8 @@ build:
   stage: build
   script:
     - echo "Compiling the code..."
+    - npm install
+
 
 unit-test:
   stage: unit-test
