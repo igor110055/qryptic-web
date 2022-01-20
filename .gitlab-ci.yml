@@ -4,9 +4,7 @@ variables:
 stages:
   - clean
   - build
-  - static-code-analysis
-  - unit-test
-  - coverage-test
+  - test
   - build-image
   - publish-image
   - deploy
@@ -31,21 +29,21 @@ build:
 
 static-code-analysis:
   image: $IMAGE_NODE
-  stage: clean
+  stage: test
   script:
     - echo "Running Static Code Analysis..."
     - npm run lint
 
 unit-test:
   image: $IMAGE_NODE
-  stage: unit-test
+  stage: test
   script:
     - echo "Running unit tests..."
     - npm run test
 
 coverage-test:
   image: $IMAGE_NODE
-  stage: coverage-test
+  stage: test
   script:
     - echo "Running coverage tests..."
 
