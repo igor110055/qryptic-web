@@ -1,3 +1,5 @@
+# Adding workflow rules to avoid other branches to use the pipeline 
+# since we only want to use the master branch
 workflow:
   rules:
     - if: $CI_COMMIT_TAG
