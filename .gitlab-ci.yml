@@ -44,6 +44,8 @@ unit-test:
 coverage-test:
   image: $IMAGE_NODE
   stage: test
+  needs:
+    - job: unit-test
   script:
     - echo "Running coverage tests..."
 
