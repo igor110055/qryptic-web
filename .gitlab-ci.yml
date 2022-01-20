@@ -1,10 +1,5 @@
-image: docker:latest
-services:
-  - docker:dind
-
 variables:
-  DOCKER_DRIVER: overlay
-  SPRING_PROFILES_ACTIVE: dev
+  IMAGE_NODE: node:14-alpine
 
 stages:
   - clean
@@ -17,22 +12,38 @@ stages:
   - deploy
 
 clean:
+  image: $IMAGE_NODE
   stage: clean
   script:
     - echo "Cleaning leftovers from previous builds"
-    # - sh "./gradlew clean"
+    - git clean -xdf
 
 build:
+  image: $IMAGE_NODE
   stage: build
   script:
-    - echo "Building the code..."
+    - echo "Building React..."
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+static-code-analysis:
+  image: $IMAGE_NODE
+  stage: clean
+  script:
+    - echo "Running Static Code Analysis..."
+    - npm run lint
 
 unit-test:
+  image: $IMAGE_NODE
   stage: unit-test
   script:
     - echo "Running unit tests..."
+    - npm run test
 
 coverage-test:
+  image: $IMAGE_NODE
   stage: coverage-test
   script:
     - echo "Running coverage tests..."
@@ -41,11 +52,16 @@ build-image:
   stage: build-image
   script:
     - echo "Building Docker Image..."
+    - docker build -t $CI_REGISTRY/qryptic/qryptic-web:$CI_COMMIT_SHORT_SHA .
+    - docker build -t $CI_REGISTRY/qryptic/qryptic-web:latest .
 
 publish-image:
   stage: publish-image
   script:
     - echo "Publishing Docker Image..."
+    - docker login -u mjovanc -p $QRYPTIC_CONTAINER_REGISTRY_TOKEN $CI_REGISTRY
+    - docker push $CI_REGISTRY/qryptic/qryptic-web:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY/qryptic/qryptic-web:latest
 
 deploy:
   stage: deploy
