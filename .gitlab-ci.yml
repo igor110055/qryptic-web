@@ -16,6 +16,7 @@ clean:
   stage: clean
   script:
     - echo "Cleaning leftovers from previous builds"
+    - apk update && apk add git
     - git clean -xdf
 
 build:
