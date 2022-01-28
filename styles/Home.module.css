@@ -1,5 +1,6 @@
 .container {
   padding: 0 2rem;
+  color: #817DD8;
 }
 
 .main {
@@ -16,7 +17,7 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  color: #817DD8;
   justify-content: center;
   align-items: center;
 }
@@ -26,11 +27,6 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
 }
 
 .title a:hover,
