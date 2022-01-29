@@ -18,9 +18,9 @@ const Home: NextPage = () => {
       <Landing />
       <footer className={styles.footer}>
 
-          Powered by{' '}
+          Powered by Qryptic
           <span className={styles.logo}>
-            <Image src="/qrypt-logo.svg" alt="Qryptic Logo" width={72} height={16} />
+            <Image src="/qrypt-logo.svg" alt="Qryptic Logo" width={40} height={18} />
           </span>
       </footer>
     </div>
