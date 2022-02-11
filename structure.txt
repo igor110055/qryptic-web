@@ -1,0 +1,20 @@
+app
+        core
+                header
+                body
+                footer
+        
+        pages
+                index
+                about
+                contact
+                cryptocurrencies
+                exchanges
+                wallets
+                
+        shared
+                http
+                interceptors
+                services
+                mocks
+                models
