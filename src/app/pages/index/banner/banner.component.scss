@@ -1,0 +1,12 @@
+@import "../../../../variables.scss";
+
+#banner {
+    width: 100%;
+    background-image: url(/assets/banners/banner_01.png);
+    height: 405px;
+    background-color: $secondary-color;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+}
