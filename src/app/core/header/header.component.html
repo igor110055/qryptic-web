@@ -14,11 +14,50 @@
                 <button mat-button id="signup-btn">Register</button>
             </div>
         
-            <button mat-icon-button class="menu-icon" aria-label="Example icon-button with menu icon">
+            <button mat-icon-button class="menu-icon" aria-label="Example icon-button with menu icon" (click)="toggleMobileToolbar()">
                 <mat-icon>menu</mat-icon>
             </button>
-                    
-        
         </mat-toolbar>
+
+        <div [ngStyle]="{'display': (displayMobileToolbar == true) ? '' : 'none' }">
+            <mat-toolbar fullscreen>
+                <mat-toolbar-row>
+                    <a routerLink="cryptocurrencies" (click)="toggleMobileToolbar()">
+                        <span>Cryptocurrencies</span>
+                    </a>
+                </mat-toolbar-row>
+            
+                <mat-toolbar-row>
+                    <a routerLink="exchanges" (click)="toggleMobileToolbar()">
+                        <span>Exchanges</span>
+                    </a>
+                </mat-toolbar-row>
+
+                <mat-toolbar-row>
+                    <a routerLink="wallets" (click)="toggleMobileToolbar()">
+                        <span>Wallets</span>
+                    </a>
+                  </mat-toolbar-row>
+
+                <mat-toolbar-row>
+                    <a href="https://blog.qryptic.net" target="_blank" (click)="toggleMobileToolbar()">
+                        <span>Blog</span>
+                    </a>
+                </mat-toolbar-row>
+
+                <mat-toolbar-row>
+                    <a routerLink="login" (click)="toggleMobileToolbar()"> 
+                        <span>Log In</span>
+                    </a>
+                </mat-toolbar-row>
+
+                <mat-toolbar-row>
+                    <a routerLink="register" (click)="toggleMobileToolbar()">
+                        <span>Register</span>
+                    </a>
+                </mat-toolbar-row>
+              </mat-toolbar>
+        </div>
+
     </div>    
 </div>

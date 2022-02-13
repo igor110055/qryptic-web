@@ -67,6 +67,10 @@ body {
   mat-paginator {
     background: $bg-black-color;
   }
+
+  .table-td-logo img {
+    max-width: 25px;
+  }
 }
 
 .mat-input-element {
