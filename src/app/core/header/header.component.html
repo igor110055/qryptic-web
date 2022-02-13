@@ -1,17 +1,24 @@
-<mat-toolbar fullscreen>
-    <img id="qryptic-nav-logo" src="/assets/logo/qryptic_logo_symbol_text_horizontal.png" alt="Qryptic Logo">
-
-    <span class="nav-spacer"></span>
-    
-    <button mat-button>Cryptocurrencies</button>
-    <button mat-button>Exchanges</button>
-    <button mat-button>Wallets</button>
-    <button mat-button>News</button>
-    <button mat-button>Log In</button>
-    <button mat-button>Sign Up</button>
-
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-    </button>
-
-</mat-toolbar>
+<div class="container-nav-full">
+    <div class="container-constr">
+        <mat-toolbar fullscreen>
+            <img routerLink="" id="qryptic-nav-logo" src="/assets/logo/qryptic_logo_symbol_text_horizontal.png" alt="Qryptic Logo">
+        
+            <span class="nav-spacer"></span>
+            
+            <div class="nav-buttons">
+                <button mat-button routerLink="cryptocurrencies">Cryptocurrencies</button>
+                <button mat-button routerLink="exchanges">Exchanges</button>
+                <button mat-button routerLink="wallets">Wallets</button>
+                <button mat-button onClick="window.open('https://blog.qryptic.net')">Blog</button>
+                <button mat-button>Log In</button>
+                <button mat-button id="signup-btn">Register</button>
+            </div>
+        
+            <button mat-icon-button class="menu-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+                    
+        
+        </mat-toolbar>
+    </div>    
+</div>

@@ -1,0 +1,77 @@
+@import "../../../variables";
+
+.footer-full {
+    width: 100%;
+    background: $bg-black-color;
+}
+
+.footer {
+    background: $bg-black-color;
+    font-size: medium;
+}
+
+.footer-info-row {
+    height: 280px;
+    min-height: 300px;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1rem;
+}
+
+.footer-info-row .column {
+    height: 200px;
+}
+
+.footer-info-row h4 {
+    font-size: medium;
+    font-weight: 600;
+}
+
+.footer-info-row ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer-info-row a {
+    color: $secondary-color;
+    text-decoration: none;
+}
+
+.footer-info-row a:hover {
+    color: $text-color;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+}
+
+.social-icon {
+    font-size: x-large;
+    padding-right: 1em;
+}
+
+#qryptic-footer-logo {
+    max-height: 3em;
+}
+
+.footer-row-logo {
+    border-top: 1px solid $black-dimmed;
+}
+
+@media only screen and (max-width: 670px) {
+    .footer-info-row {
+        grid-template-columns: 1fr 1fr;
+        min-height: 340px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .footer-info-row {
+        grid-template-columns: 1fr;
+        min-height: 800px;
+    }
+    .footer-info-row .column {
+        text-align: center;
+    }
+}

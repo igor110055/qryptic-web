@@ -6,6 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule} from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { MatTableModule } from '@angular/material/table'
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +21,10 @@ import { PagesComponent } from './pages/pages.component';
 import { IndexComponent } from './pages/index/index.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CryptocurrenciesComponent } from './pages/cryptocurrencies/cryptocurrencies.component';
+import { ExchangesComponent } from './pages/exchanges/exchanges.component';
+import { WalletsComponent } from './pages/wallets/wallets.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +36,9 @@ import { FooterComponent } from './core/footer/footer.component';
     IndexComponent,
     AboutComponent,
     FooterComponent,
+    CryptocurrenciesComponent,
+    ExchangesComponent,
+    WalletsComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +49,12 @@ import { FooterComponent } from './core/footer/footer.component';
     MatButtonModule,
     MatIconModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    FontAwesomeModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

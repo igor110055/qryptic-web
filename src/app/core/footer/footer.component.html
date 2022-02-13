@@ -1,10 +1,76 @@
-<footer>
-    <div class="container">
-      <a class="logo-font" routerLink="/">conduit</a>
-      <span class="attribution">
-        &copy; 
-        An interactive learning project from <a href="https://thinkster.io">Thinkster</a>.
-        Code licensed under MIT.
-      </span>
+<div class="footer-full">
+    <div class="container-constr">
+        <mat-toolbar class="footer" fullscreen>
+            
+            <mat-toolbar-row class="footer-info-row">
+                <div class="column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a routerLink="about">About us</a></li>
+                        <li><a routerLink="terms-of-use">Terms of use</a></li>
+                        <li><a routerLink="privacy-policy">Privacy Policy</a></li>
+                        <li><a routerLink="community-rules">Community Rules</a></li>
+                        <li><a routerLink="careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a routerLink="faq">FAQ</a></li>
+                        <li><a routerLink="contact">Contact Support</a></li>
+                        <li><a href="https://api.qryptic.net/v1/docs/index.html" target="_blank">API Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a routerLink="qryptic-api">Qryptic API</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Socials</h4>
+                    <ul style="display: inline-flex;">
+                        <li>
+                            <a href="https://discord.gg/xrtwNfqshz" target="_blank">
+                                <fa-icon [ngClass]="['social-icon']" [icon]="faDiscord"></fa-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/qryptic" target="_blank">
+                                <fa-icon [ngClass]="['social-icon']" [icon]="faTelegram"></fa-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="blog.qryptic.net/" target="_blank">
+                                <fa-icon [ngClass]="['social-icon']" [icon]="faMedium"></fa-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/qrypticnet/" target="_blank">
+                                <fa-icon [ngClass]="['social-icon']" [icon]="faInstagram"></fa-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/qrypticnet" target="_blank">
+                                <fa-icon [ngClass]="['social-icon']" [icon]="faTwitter"></fa-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/qryptic" target="_blank">
+                                <fa-icon [ngClass]="['social-icon']" [icon]="faLinkedin"></fa-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </mat-toolbar-row>
+            
+            <mat-toolbar-row class="footer-row-logo">
+                <div style="margin:0 auto;" class="mat-caption">
+                    <img routerLink="" id="qryptic-footer-logo" src="/assets/logo/qryptic_logo_symbol.png" alt="Qryptic Logo">
+                </div>
+            </mat-toolbar-row>
+        
+        </mat-toolbar>
     </div>
-  </footer>
+    
+</div>

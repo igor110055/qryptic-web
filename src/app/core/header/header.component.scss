@@ -1,3 +1,24 @@
+@import "../../../variables";
+
+a {
+    all: unset;
+}
+
+.container-nav-full {
+    height: 65px;
+    width: 100%;
+    background: $bg-black-color;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.9);
+    // border-bottom: 1px solid $black-dimmed;
+    z-index:999;
+}
+
+.mat-toolbar {
+    background: none;
+}
+
 .nav-spacer {
     flex: 1 1 auto;
 }
@@ -5,3 +26,35 @@
 #qryptic-nav-logo {
     max-height: 2em;
 }
+
+#signup-btn {
+    background-color: $primary-color;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+}
+
+#signup-btn:hover {
+    background-color: $secondary-color;
+}
+
+@media only screen and (min-width: 800px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .nav-buttons {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .mat-toolbar-row,
+    .mat-toolbar-single-row {
+        height: 65px;
+    }
+}
+    

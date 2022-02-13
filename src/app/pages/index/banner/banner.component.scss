@@ -1,12 +1,33 @@
 @import "../../../../variables.scss";
 
 #banner {
+    margin-top: 65px;
     width: 100%;
-    background-image: url(/assets/banners/banner_01.png);
-    height: 405px;
-    background-color: $secondary-color;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 300px;
+    // background-color: $secondary-color;
+    background-image: url(/assets/banners/binding_dark.png);
+    background-repeat: repeat-x repeat-y;
+    background-position: bottom right;
     border: 0;
+    color: white;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
+
+.welcome {
+    margin: 20px;
+    padding-top: 70px;
+    height: 400px;
+    color: white;
+
+    .headline {
+        font-size: xxx-large;
+        padding-bottom: 0.5em;
+        line-height: 1em;
+    }
+}
+
+@media (max-width: 600px) {
+    .welcome {
+        padding-top: 50px;
+    }
 }

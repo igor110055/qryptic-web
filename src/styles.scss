@@ -5,16 +5,102 @@ html { height: 100%; }
 
 body {  
   font: 100% $font-stack;
-  color: $highlight-color;
-  background-color: $normal-color;
+  color: $text-color;
+  background-color: $black-dimmed;
   margin: 0;
+  // overflow-y: scroll;
 }
 
 .container {
   margin: 0 auto;
 }
 
-.container-page {
+.container-constr {
   margin: 0 auto;
   max-width: 1200px;
+}
+
+.container-text-page {
+  margin: 200px auto;
+  max-width: 800px;
+}
+
+.container-list {
+  margin: 65px auto;
+  padding: 0 20px 0 20px;
+  max-width: 1200px;
+}
+
+.container-text-page h1 {
+  font-size: xxx-large;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.container-text-page .content {
+  margin: 50px 30px 30px 30px;
+  padding: 30px 30px 5px 30px;
+  //border: 1px solid $secondary-color;
+  border-radius: 10px;
+  // background: $normal-color;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
+
+.btn-primary {
+  background: $primary-color;
+  color: $text-color;
+}
+
+.qryptic-table {
+  background: $bg-black-color;
+  box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  overflow:hidden !important;
+
+  table {
+    background: $bg-black-color;
+  }
+
+  mat-paginator {
+    background: $bg-black-color;
+  }
+}
+
+.mat-input-element {
+  caret-color: $primary-color !important;
+}
+
+.mat-form-field.mat-focused
+.mat-form-field-ripple {
+  background-color: $primary-color !important;
+}
+
+.mat-form-field-appearance-standard .mat-form-field-underline,
+.mat-form-field.mat-focused,
+.mat-form-field-label {
+  color: $primary-color !important;
+}
+
+.mat-input-element {
+  color: $text-color !important;
+}
+
+.mat-select-panel {
+  background: $bg-black-color;
+}
+
+.mat-header-cell,
+.mat-form-field.mat-focused.mat-primary
+.mat-select-arrow,
+.mat-primary
+.mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $primary-color;
+}
+
+.mat-grid-tile-content {
+  align-items: unset !important;
+  justify-content: unset !important;
 }
