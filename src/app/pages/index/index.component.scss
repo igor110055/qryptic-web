@@ -1,0 +1,119 @@
+@import "../../../variables";
+
+.container-index {
+  margin: 50px auto;
+  padding: 0 20px 0 20px;
+  max-width: 1200px;
+}
+
+.top-cryptocurrencies,
+.top-exchanges {
+  margin-top: 50px;
+}
+
+.top-cryptocurrencies h2,
+.top-exchanges h2 {
+  color: $primary-color;
+}
+
+.mat-grid-tile .mat-figure {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.index-tile {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+  border-radius: 10px;
+}
+
+.tile-content {
+  margin: 20px;
+  width: 100%;
+
+  .col1 {
+    width: 20%;
+    display: inline-block;
+  }
+
+  .col2 {
+    width: 70%;
+    display: inline-block;
+  }
+}
+
+.tile-logo {
+  display: inline-block;
+
+  img {
+    max-width: 35px;
+  }
+}
+
+.tile-name {
+  font-weight: 600;
+}
+
+.tile-ticker {
+  color: $secondary-color;
+}
+
+.tile-price {
+  font-size: xx-large;
+  margin-top: 35px;
+}
+
+.tile-more-info {
+  margin: -20px 0 20px 20px;
+  float: right;
+
+  span {
+    font-weight: 700;
+    font-size: small;
+  }
+}
+
+.caret-up {
+  font-size: 1.4em;
+  color: green;
+  margin-left: 5px;
+}
+
+.caret-down {
+  font-size: 1.4em;
+  color: red;
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 1248px) {
+  .tile-price {
+    font-size: x-large;
+    margin-top: 20px;
+  }
+
+  .col2 {
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (max-width: 1133px) {
+  .tile-price {
+    font-size: large;
+    margin-top: 20px;
+  }
+
+  .col2 {
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .col1 {
+    width: 10%;
+  }
+
+  .tile-price {
+    margin-top: 50px;
+    font-size: xx-large;
+  }
+}
