@@ -25,6 +25,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CryptocurrenciesComponent } from './pages/cryptocurrencies/cryptocurrencies.component';
 import { ExchangesComponent } from './pages/exchanges/exchanges.component';
 import { WalletsComponent } from './pages/wallets/wallets.component';
+import { TermsOfUseComponent } from './pages/terms-of-use/terms-of-use.component';
+import { CommunityRulesComponent } from './pages/community-rules/community-rules.component';
+import { CareersComponent } from './pages/careers/careers.component';
+import { QrypticApiComponent } from './pages/qryptic-api/qryptic-api.component';
+import { FaqComponent } from './pages/faq/faq.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +45,12 @@ import { WalletsComponent } from './pages/wallets/wallets.component';
     CryptocurrenciesComponent,
     ExchangesComponent,
     WalletsComponent,
+    TermsOfUseComponent,
+    CommunityRulesComponent,
+    CareersComponent,
+    QrypticApiComponent,
+    FaqComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

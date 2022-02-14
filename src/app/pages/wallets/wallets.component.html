@@ -1,1 +1,46 @@
-<p>wallets works!</p>
+<div class="container-wallets">
+    <div class="wallets">
+        <h1>Wallets</h1>
+        <mat-grid-list [cols]="breakpoint"
+                       rowHeight="{{ rowHeight }}"
+                       [gutterSize]="'20px'"
+                       class="wallet-grid-list"
+                       (window:resize)="onResize($event)">
+            <mat-grid-tile class="wallet-tile" *ngFor="let i of [1,2,3,4]">
+                
+                <div class="tile-content">
+                    
+                    <div class="col1">
+                        <div class="tile-logo">
+                            <img src="/assets/cryptocurrencies/stakecubecoin.png"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col2">
+                        <div class="tile-name">Trust Wallet</div>
+                        <div class="tile-link">
+                            <a href="https://trustwallet.com" target="_blank">trustwallet.com</a>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div><span>Type:</span> Software</div>
+                        <div><span>Platforms:</span> Android, iOS, Linux, Windows, OS X</div>
+                        <div><span>Storage:</span> Hot, Cold</div>
+
+                        <hr>
+
+                        <div class="tile-description">
+                            <span>Description:</span>
+                            StakeCube is the predominant crypto ecosystem originally launched in June 2018 as PoS Pool and has since grown to service over 75,000 Users and supporting 60+ different crypto assets with unique features across 10+ apps, like an integrated Exchange, masternode hosting, on-board crypto mining. 
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

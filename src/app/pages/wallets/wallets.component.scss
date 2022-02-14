@@ -1,0 +1,114 @@
+@import "../../../variables";
+
+
+a {
+    color: $secondary-color;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $text-color;
+}
+
+.container-wallets {
+    margin: 65px auto;
+    padding: 0 20px 0 20px;
+    max-width: 1200px;
+}
+
+.wallets {
+    padding-top: 20px;
+
+    .row {
+        font-size: 1em;
+        margin-top: 15px;
+    }
+}
+
+.mat-grid-tile .mat-figure {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+  
+.wallet-tile {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+}
+  
+.tile-content {
+    margin: 20px;
+    width: 100%;
+  
+    .col1 {
+        width: 10%;
+        display: inline-block;
+    }
+  
+    .col2 {
+        width: 70%;
+        display: inline-block;
+    }
+
+    hr {
+        margin-top: 15px;
+    }
+
+    .row {
+        span {
+            color: $secondary-color;
+        }
+    }
+}
+  
+.tile-logo {
+    display: inline-block;
+  
+    img {
+        max-width: 35px;
+    }
+}
+  
+.tile-name {
+    font-weight: 600;
+}
+
+.tile-link {
+    color: $secondary-color;
+}
+
+.tile-description {
+    margin-top: 15px;
+
+    span {
+        color: $secondary-color;
+    }
+}
+
+.tile-more-info {
+    margin: -20px 0 20px 20px;
+    float: right;
+
+    span {
+        font-weight: 700;
+        font-size: small;
+    }
+}
+
+@media only screen and (max-width: 1248px) {
+    .col2 {
+        margin-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 1133px) {
+    .col2 {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .col1 {
+        width: 10%;
+    }
+}

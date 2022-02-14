@@ -11,6 +11,13 @@ body {
   // overflow-y: scroll;
 }
 
+hr {
+  color: $black-dimmed;
+  background-color: $black-dimmed;
+  height: 1px;
+  border-width:0;
+}
+
 .container {
   margin: 0 auto;
 }

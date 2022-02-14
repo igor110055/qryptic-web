@@ -23,7 +23,7 @@ export class CryptocurrenciesComponent implements OnInit {
     this.titleService.setTitle("Cryptocurrencies | Qryptic.net")
 
     // Create 100 users
-    const users:any = [
+    const cryptocurrencies:any = [
       {
         id: '1',
         name: 'StakeCubeCoin',
@@ -38,7 +38,7 @@ export class CryptocurrenciesComponent implements OnInit {
     ];
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+    this.dataSource = new MatTableDataSource(cryptocurrencies);
   }
 
   ngOnInit(): void {
