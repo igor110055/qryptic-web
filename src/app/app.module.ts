@@ -14,10 +14,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreComponent } from './core/core.component';
 import { HeaderComponent } from './core/header/header.component';
 import { BannerComponent } from './pages/index/banner/banner.component';
-import { PagesComponent } from './pages/pages.component';
 import { IndexComponent } from './pages/index/index.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './core/footer/footer.component';
@@ -35,10 +33,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CoreComponent,
     HeaderComponent,
     BannerComponent,
-    PagesComponent,
     IndexComponent,
     AboutComponent,
     FooterComponent,

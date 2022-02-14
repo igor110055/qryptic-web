@@ -1,6 +1,8 @@
 <app-pages-index-banner></app-pages-index-banner>
 
 <div class="container-index">
+    
+    
     <div class="top-cryptocurrencies">
         <h2>Featured Cryptocurrencies</h2>
         <mat-grid-list [cols]="breakpoint"
@@ -23,7 +25,11 @@
                         <div class="tile-ticker">SCC</div>
                     </div>
 
-                    <div class="tile-price">$1000.05</div>
+                    <div class="tile-price">
+                        <div *ngIf="price">
+                            ${{ price | number }}
+                        </div>
+                    </div>
                         <div class="tile-more-info">
                             <span>4.2%</span>
                             <fa-icon [ngClass]="['caret-up']" [icon]="faCaretUp"></fa-icon>
