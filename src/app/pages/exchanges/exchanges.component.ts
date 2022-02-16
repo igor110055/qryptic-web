@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator'; 
 import { MatSort } from '@angular/material/sort';
 
+import { CoingeckoApiService } from 'src/app/shared/services/coingecko-api.service';
 import { ExchangeData } from 'src/app/shared/models/exchange-data.model';
 
 @Component({
@@ -12,33 +13,37 @@ import { ExchangeData } from 'src/app/shared/models/exchange-data.model';
   styleUrls: ['./exchanges.component.scss']
 })
 export class ExchangesComponent implements OnInit {
-displayedColumns: string[] = ['id', 'name', 'exchangeScore', 'volumeTwentyfourHours', 'avgLiquidity',
+  displayedColumns: string[] = ['id', 'name', 'exchangeScore', 'volumeTwentyfourHours', 'avgLiquidity',
                                 'weeklyVisits', 'markets', 'coins', 'fiatSupported', 'volumeSevenDays'];
-  dataSource: MatTableDataSource<ExchangeData>;
+  exchanges!: any[];
+  dataSource!: MatTableDataSource<ExchangeData>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator; 
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private titleService: Title) {
+  constructor(
+    private coinGeckoService: CoingeckoApiService,
+    private titleService: Title
+  ) {
     this.titleService.setTitle("Exchanges | Qryptic.net")
 
-    const exchanges:any = [
-      {
-        id: '1',
-        name: 'StakeCube',
-        exchangeScore: '1',
-        volumeTwentyfourHours: '1',
-        avgLiquidity: '1',
-        weeklyVisits: '1',
-        markets: '1',
-        coins: '1',
-        fiatSupported: '1',
-        volumeSevenDays: '1'
-      }
-    ];
+    this.coinGeckoService.getExchanges(25).subscribe(response => {
+      Object.values(response).forEach(cryptocurrency => {
+        let crypto = {
+          id: '1',
+          name: 'StakeCubeCoin',
+          price: '30000',
+          twentyfourHours: '300',
+          sevenDays: '3000',
+          marketCap: '3333333',
+          volume: '3123123',
+          circulatingSupply: '12312313',
+          lastSevenDays: '123123'
+        }
+      })
 
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(exchanges);
+      this.dataSource = new MatTableDataSource(Object.values(response));
+    });
   }
 
   ngOnInit(): void {

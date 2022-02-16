@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Observable, Subject } from "rxjs";
-import { map } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
+import { Observable, Subject, of } from "rxjs";
 
-import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { BinanceWsService } from 'src/app/shared/services/binance-ws.service';
 
-const CHAT_URL = 'wss://fstream.binance.com/ws/btcusdt@markPrice'
-export interface Price {
-  p: string;
+import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { CoingeckoApiService } from 'src/app/shared/services/coingecko-api.service';
+
+export interface TopCryptoCurrencyPrice {
+  name: string,
+  price: string,
 }
+
+// we need to fetch all cryptocurrencies from binance and get the
+// market cap and list descending order - top 8
+// https://stackoverflow.com/questions/66132843/is-there-a-way-to-get-the-market-cap-or-market-cap-rank-of-a-coin-using-the-bina 
+// do the calculation here ?
+const featuredCryptoCurrencies = [
+  'stakecubecoin',
+  'kryptokrona',
+  'lbrycredits',
+  'chiliz'
+]
 
 @Component({
   selector: 'app-pages-index',
@@ -21,29 +34,15 @@ export class IndexComponent implements OnInit {
   faCaretDown = faCaretDown;
   breakpoint!: number;
   rowHeight!: string;
-  price!: string;
-  
-  public prices: Subject<Price>;
+  topCryptocurrencies: any;
+  topExchanges: any;
 
   constructor(
     private titleService: Title,
-    private binanceWsService: BinanceWsService
+    private binanceWsService: BinanceWsService,
+    private coinGeckoService: CoingeckoApiService
   ) {
-    this.prices = <Subject<Price>>binanceWsService
-      .connect(CHAT_URL)
-      .pipe(map((response: MessageEvent): Price => {
-        let data = JSON.parse(response.data);
-        return {
-          p: data.p,
-        };
-      }
-    ));
 
-
-    this.prices.subscribe(msg => {
-      console.log(msg)
-      this.price = msg.p;
-    })
   }
 
   ngOnInit(): void {
@@ -51,14 +50,16 @@ export class IndexComponent implements OnInit {
     this.breakpoint = this.getBreakPoint();
     this.rowHeight = this.getRowHeight();
 
-    // const subject = webSocket('wss://fstream.binance.com/ws/btcusdt@markPrice');
+    // Get top 12 coins
+    this.coinGeckoService.getCoinsMarkets('usd', 12, 1).subscribe(response => {
+      this.topCryptocurrencies = response;
+    });
 
-    // subject.subscribe({
-    //   next: (v) => this.data = v,
-    //   error: (e) => console.error(e),
-    //   complete: () => console.info('complete') 
-    // })
-
+    // Get top 12 Exchanges
+    this.coinGeckoService.getExchanges(12).subscribe(response => {
+      this.topExchanges = response;
+      console.log(response)
+    });
   }
 
   onResize(event:any) {

@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator'; 
 import { MatSort } from '@angular/material/sort';
 
+import { CoingeckoApiService } from 'src/app/shared/services/coingecko-api.service';
 import { CryptoCurrencyData } from 'src/app/shared/models/crypto-currency-data.model';
 
 @Component({
@@ -14,31 +15,36 @@ import { CryptoCurrencyData } from 'src/app/shared/models/crypto-currency-data.m
 export class CryptocurrenciesComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'price', 'twentyfourHours', 'sevenDays',
                                 'marketCap', 'volume', 'circulatingSupply', 'lastSevenDays'];
-  dataSource: MatTableDataSource<CryptoCurrencyData>;
+  cryptoCurrencies!: any[];
+  dataSource!: MatTableDataSource<CryptoCurrencyData>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator; 
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private titleService: Title) {
+  constructor(
+    private coinGeckoService: CoingeckoApiService,
+    private titleService: Title
+  ) {
     this.titleService.setTitle("Cryptocurrencies | Qryptic.net")
 
-    // Create 100 users
-    const cryptocurrencies:any = [
-      {
-        id: '1',
-        name: 'StakeCubeCoin',
-        price: '30000',
-        twentyfourHours: '300',
-        sevenDays: '3000',
-        marketCap: '3333333',
-        volume: '3123123',
-        circulatingSupply: '12312313',
-        lastSevenDays: '123123'
-      }
-    ];
+    this.coinGeckoService.getCoinsMarkets('usd', 12, 1).subscribe(response => {
+      Object.values(response).forEach(cryptocurrency => {
+        let crypto = {
+          id: '1',
+          name: 'StakeCubeCoin',
+          price: '30000',
+          twentyfourHours: '300',
+          sevenDays: '3000',
+          marketCap: '3333333',
+          volume: '3123123',
+          circulatingSupply: '12312313',
+          lastSevenDays: '123123'
+        }
+      })
 
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(cryptocurrencies);
+      this.dataSource = new MatTableDataSource(Object.values(response));
+    });
+    
   }
 
   ngOnInit(): void {
